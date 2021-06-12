@@ -20,7 +20,7 @@ def fileB(linha):
         textoB= linhasTextoB.readlines()[linha] 
     #print(f'TEXTO A: {textoA}')    
     #print(f'TEXTO B: {textoB}')
-    #SUBSTITUI "=""; PELA A TRADUCAO DO AQRUIVBO B
+    #SUBSTITUI "=""; PELA A TRADUCAO DO ARQUIVO B
     novoTexto= textoA.replace(caracteresSubs,f'="{str(textoB)}";')
     txt_tratado=novoTexto.replace(tratamento,'')
     print(f'RESULTADO FINAL {novoTexto}')
