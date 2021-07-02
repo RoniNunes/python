@@ -25,11 +25,11 @@ nova_postagem = [
 
 @app.route('/postagens', methods=['GET'])
 def obter_todas_postagens():
-    return jsonify(postagens)
+    return jsonify(postagens), 200
 
 @app.route('/postagens/<int:postagem_id>', methods=['GET'])
 def obter_postagens_por_id(postagem_id): #Passamos o ID que queremos consultar.
-    return jsonify(postagens[postagem_id])
+    return jsonify(postagens[postagem_id]), 200
 
 @app.route('/postagens', methods=['POST'])
 def nova_postagem():
@@ -47,7 +47,7 @@ def atualizar_postagem(postagem_id):#Passamos o ID que queremos consultar.
 def excluir_postagem(postagem_id):#Passamos o ID que queremos consultar.
     postagem = postagens[postagem_id]
     del postagens[postagem_id]
-    return jsonify({'mensagem': 'A postagem foi excluida com sucesso'})
+    return jsonify({'mensagem': 'A postagem foi excluida com sucesso'}), 200
 
 
 if __name__ == '__main__':
